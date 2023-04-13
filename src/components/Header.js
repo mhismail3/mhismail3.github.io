@@ -21,30 +21,43 @@ const Header = ({ scrollPosition }) => {
   } transition-all duration-300 ease-in-out`;
 
   return (
-    <header className={headerClasses.join(" ")} style={headerStyle}>
+    <header
+      className={`${headerClasses.join(" ")} min-h-[9rem] md:min-h-[5rem]`}
+      style={headerStyle}
+    >
       <div
         className={`container mx-auto px-4 h-full transition-all duration-300 ease-in-out ${
-          scrollPosition > 50 ? "py-4" : "pt-20 pb-2"
-        }`}
+          scrollPosition > 50 ? "py-4 md:py-0" : "pt-6 md:pt-20 pb-2"
+        } ${scrollPosition > 50 ? "md:pb-0" : ""}`}
       >
-        <div className="flex justify-between items-center h-full">
-          <div className="flex items-center">
-            <img
-              src={moosePic}
-              alt="Profile"
-              className={`rounded-full transition-all duration-300 ease-in-out ${
-                scrollPosition > 50 ? "w-10 h-10" : "w-24 h-24"
-              }`}
-            />
-            <h1
-              className={`font-bold text-left ml-4 transition-all duration-300 ease-in-out ${
-                scrollPosition > 50 ? "text-4xl" : "text-6xl"
-              }`}
-            >
-              Mohsin Ismail
-            </h1>
+        <div className="flex flex-col items-center md:flex-row justify-between h-full">
+          <div className="flex items-center flex-col md:flex-row mb-4 md:mb-0">
+            <div className="flex items-center">
+              <img
+                src={moosePic}
+                alt="Profile"
+                className={`rounded-full transition-all duration-300 ease-in-out mr-4 md:mr-0 ${
+                  scrollPosition > 50
+                    ? "w-14 h-14"
+                    : "w-16 h-16 md:w-24 md:h-24"
+                }`}
+              />
+              <h1
+                className={`font-bold text-center md:text-left ml-0 md:ml-4 transition-all duration-300 ease-in-out leading-none ${
+                  scrollPosition > 50 ? "text-4xl" : "text-6xl"
+                }`}
+                style={{
+                  fontSize: `min(3.5rem, 10vw)`,
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                Mohsin Ismail
+              </h1>
+            </div>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-wrap justify-center md:flex-nowrap md:justify-start items-center space-x-4">
             <a
               href="mailto:youremail@example.com"
               target="_blank"

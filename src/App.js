@@ -24,9 +24,11 @@ function App() {
   return (
     <div className="font-poppins">
       <Header scrollPosition={scrollPosition} />
-      <About />
-      <Projects />
-      <Contact />
+      <main className="pt-32 md:pt-20">
+        <About />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
