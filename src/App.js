@@ -4,10 +4,14 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import MobileHeader from "./components/MobileHeader";
+import useWindowSize from "./utils/useWindowSize";
 import "./App.css";
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const windowSize = useWindowSize();
+  const isMobile = windowSize.width <= 768;
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -23,7 +27,7 @@ function App() {
 
   return (
     <div className="font-poppins">
-      <Header scrollPosition={scrollPosition} />
+      {isMobile ? <MobileHeader /> : <Header scrollPosition={scrollPosition} />}
       <main className="pt-32 md:pt-20">
         <About />
         <Projects />
