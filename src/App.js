@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="font-poppins">
       {isMobile ? <MobileHeader /> : <Header scrollPosition={scrollPosition} />}
-      <main className="pt-32 md:pt-20">
+      <main className="pt-0 md:pt-20">
         <About />
         <Projects />
         <Contact />

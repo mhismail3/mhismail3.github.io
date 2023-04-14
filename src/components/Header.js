@@ -1,14 +1,12 @@
 import React from "react";
 import { headerClasses } from "../styles/tailwindClasses";
 import moosePic from "../assets/moose-pic.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import SocialIcons from "./SocialIcons";
 
 const Header = ({ scrollPosition }) => {
   const headerStyle = {
     backgroundColor:
-      scrollPosition > 50 ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0)",
+      scrollPosition > 50 ? "rgba(230, 230, 230, 1)" : "rgba(255, 255, 255, 0)",
     boxShadow:
       scrollPosition > 50
         ? "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
@@ -58,27 +56,7 @@ const Header = ({ scrollPosition }) => {
             </div>
           </div>
           <div className="flex flex-wrap justify-center md:flex-nowrap md:justify-start items-center space-x-4">
-            <a
-              href="mailto:youremail@example.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faEnvelope} className={`${iconClass}`} />
-            </a>
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faGithub} className={`${iconClass}`} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faLinkedin} className={`${iconClass}`} />
-            </a>
+            <SocialIcons iconClass={iconClass} />
           </div>
         </div>
       </div>
